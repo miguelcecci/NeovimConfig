@@ -1,3 +1,26 @@
+" ----------------------------------------
+" Automatic installation of vim-plug, if it's not available
+" ----------------------------------------
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+"-----------------------------------------
+
+"-----------------------------------------
+" Automatically install missing plugins on startup
+"-----------------------------------------
+autocmd VimEnter *
+      \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+      \|   PlugInstall --sync | q
+      \| endif
+"-----------------------------------------
+
+"-----------------------------------------
+" Plugins
+"-----------------------------------------
+
 " Get nvim initial config from .vimrc
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
