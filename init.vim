@@ -21,6 +21,7 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'neoclide/coc.nvim', {'branch':'release'}
+Plug 'jupyter-vim/jupyter-vim'
 Plug 'scrooloose/nerdtree'
 
 " List ends here. Plugins become visible to Vim after this call.
