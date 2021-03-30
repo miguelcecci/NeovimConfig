@@ -1,3 +1,4 @@
+" ~/.config/nvim/init.vim
 " ----------------------------------------
 " Automatic installation of vim-plug, if it's not available
 " ----------------------------------------
@@ -43,9 +44,14 @@ set autoindent  " Copy indent from current line, over to the new line
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
+" Plugin 'dart-lang/dart-vim-plugin'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'jupyter-vim/jupyter-vim'
 Plug 'scrooloose/nerdtree'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -53,3 +59,5 @@ call plug#end()
 " NERDTree custom config
 let NERDTreeQuitOnOpen=1
 nmap <C-n> :NERDTreeToggle<CR>
+
+
