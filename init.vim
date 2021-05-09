@@ -52,6 +52,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
+Plug 'honza/vim-snippets'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -60,4 +61,18 @@ call plug#end()
 let NERDTreeQuitOnOpen=1
 nmap <C-n> :NERDTreeToggle<CR>
 
+" Flutter custom keymapping
+nmap <silent> gd <Plug>(coc-definition)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
+" Coc snippets keymapping
+imap <C-l> <Plug>(coc-snippets-expand)
+vmap <C-j> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+xmap <leader>x  <xmap>(coc-convert-snippet)
+"
+" Word replacer shortcut
+nmap <leader>r "_diw<S-p>

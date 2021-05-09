@@ -1,0 +1,4 @@
+snippet lcls "Lua Class" 
+function test()
+end
+endsnippet
