@@ -33,7 +33,7 @@ set cursorline
 set shiftwidth=2
 set tabstop=1
 
-set noexpandtab " Make sure that every file uses real tabs, not spaces
+set expandtab " Make sure that every file uses real tabs, not spaces
 set shiftround  " Round indent to multiple of 'shiftwidth'
 set smartindent " Do smart indenting when starting a new line
 set autoindent  " Copy indent from current line, over to the new line
@@ -48,6 +48,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'jupyter-vim/jupyter-vim'
 Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'natebosch/vim-lsc'
@@ -76,3 +77,31 @@ xmap <leader>x  <xmap>(coc-convert-snippet)
 "
 " Word replacer shortcut
 nmap <leader>r "_diw<S-p>
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
